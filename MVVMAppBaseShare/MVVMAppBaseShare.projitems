@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e91b2802-7c1c-4353-8057-7912c6c01429</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MVVMAppBaseShare</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AppViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\FileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\AppView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\FileView.cs" />
+  </ItemGroup>
+</Project>
