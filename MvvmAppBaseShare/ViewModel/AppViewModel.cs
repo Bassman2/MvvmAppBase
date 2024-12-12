@@ -41,7 +41,7 @@ public partial class AppViewModel : ObservableObject
             }
             else
             {
-                throw new Exception($"No App setttings property {upgradeProperty} found");
+                //throw new Exception($"No App setttings property {upgradeProperty} found");
             }
         }
         //else
