@@ -6,7 +6,7 @@
     <SharedGUID>e91b2802-7c1c-4353-8057-7912c6c01429</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>MVVMAppBaseShare</Import_RootNamespace>
+    <Import_RootNamespace>MvvmAppBase</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AppViewModel.cs" />
