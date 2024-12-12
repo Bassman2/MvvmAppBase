@@ -11,7 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AppViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\FileViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\AppView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\FileView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\AppRibbonView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\AppWindowView.cs" />
   </ItemGroup>
 </Project>
