@@ -1,6 +1,4 @@
-﻿//using System.Reflection;
-
-namespace MvvmAppBase.ViewModel;
+﻿namespace MvvmAppBase.ViewModel;
 
 public partial class AppViewModel : ObservableObject
 {
@@ -15,9 +13,10 @@ public partial class AppViewModel : ObservableObject
 
     #region Settings
 
-    protected static ApplicationSettingsBase? GetApplicationSettings() 
-        => (ApplicationSettingsBase?)System.Reflection.Assembly.GetEntryAssembly()!.GetTypes().FirstOrDefault(t => t.FullName!.EndsWith(".Properties.Settings"))?.GetProperty("Default")?.GetValue(null);
-    
+    protected static ApplicationSettingsBase? GetApplicationSettings()
+    {
+        return (ApplicationSettingsBase?)System.Reflection.Assembly.GetEntryAssembly()!.GetTypes().FirstOrDefault(t => t.FullName!.EndsWith(".Properties.Settings"))?.GetProperty("Default")?.GetValue(null);
+    }
 
     private static void UpgradeSettings()
     {
@@ -173,7 +172,7 @@ public partial class AppViewModel : ObservableObject
     [RelayCommand]
     protected virtual void OnHelp()
     {
-        string path = Path.ChangeExtension(System.Reflection.Assembly.GetEntryAssembly()!.Location, ".chm");
+        string path = System.IO.Path.ChangeExtension(System.Reflection.Assembly.GetEntryAssembly()!.Location, ".chm");
         if (System.IO.File.Exists(path))
         {
             System.Diagnostics.Process.Start(path);

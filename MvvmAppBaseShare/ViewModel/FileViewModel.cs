@@ -33,7 +33,7 @@ public partial class FileViewModel : AppViewModel
         string[] cmd = Environment.GetCommandLineArgs();
         if (cmd.Length > 1 && System.IO.File.Exists(cmd[1]))
         {
-            string path = Path.GetFullPath(cmd[1]);
+            string path = System.IO.Path.GetFullPath(cmd[1]);
             OnLoad(path);
             this.FilePath = path;
         }
@@ -53,7 +53,7 @@ public partial class FileViewModel : AppViewModel
     private string? filePath;
     
 
-    public string? FileName => Path.GetFileNameWithoutExtension(this.FilePath);
+    public string? FileName => System.IO.Path.GetFileNameWithoutExtension(this.FilePath);
 
 
     [ObservableProperty]
@@ -353,7 +353,7 @@ public partial class FileViewModel : AppViewModel
 
     protected void AddRecentFile(string path)
     {
-        if (this.RecentFiles.Count <= this.MaxNumOfRecentFiles && !this.RecentFiles.Any(i => i.Name == Path.GetFileName(path)))
+        if (this.RecentFiles.Count <= this.MaxNumOfRecentFiles && !this.RecentFiles.Any(i => i.Name == System.IO.Path.GetFileName(path)))
         {
             this.RecentFiles.Add(new FileItem(path));
 
