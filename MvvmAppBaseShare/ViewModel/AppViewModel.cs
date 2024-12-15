@@ -1,6 +1,6 @@
 ﻿namespace MvvmAppBase.ViewModel;
 
-public partial class AppViewModel : ObservableObject
+public abstract partial class AppViewModel : ObservableObject
 {
     //private TaskbarItemProgressState progressState = TaskbarItemProgressState.None;
     //private double progressValue = 0.0;
@@ -120,8 +120,7 @@ public partial class AppViewModel : ObservableObject
     }
 
     //[RelayCommand]
-    protected virtual void OnActivate()
-    { }
+    protected abstract void OnActivate();
 
     protected virtual bool OnCanRefresh() => true;
     

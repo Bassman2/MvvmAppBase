@@ -1,6 +1,6 @@
 ﻿namespace MvvmAppBase.ViewModel;
 
-public partial class FileViewModel : AppViewModel
+public abstract partial class FileViewModel : AppViewModel
 {
     private readonly string saveBefore = "Do you want to store current file before? If not all changes will be lost.";
 
@@ -70,22 +70,11 @@ public partial class FileViewModel : AppViewModel
 
     protected virtual string AutoloadFile { get { return string.Empty; } set { } }
 
-    
-    public virtual void OnCreate()
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void OnCreate();
 
-    
-    public virtual void OnLoad(string path)
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void OnLoad(string path);
 
-    public virtual void OnStore(string path)
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void OnStore(string path);
 
     protected virtual bool OnCanNew() => this.ProgressState == TaskbarItemProgressState.None;        
 
